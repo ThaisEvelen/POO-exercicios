@@ -1,4 +1,6 @@
-package Exercicios;
+package Exercicios.Model;
+
+
 
 public class Usuario extends Pessoa {
     private int idade;
