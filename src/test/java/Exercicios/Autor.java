@@ -1,6 +1,5 @@
 package Exercicios;
-
-public class Autor extends Pessoa {
+public class Autor extends Exercicios.Pessoa {
     private String nacionalidade;
 
     public Autor(String nome, String nacionalidade, Livro[] livros) {
@@ -17,7 +16,6 @@ public class Autor extends Pessoa {
     }
 
     public Livro[] getObrasPublicadasPorGenero(String genero) {
-        // Filtra os livros do autor por gênero
         Livro[] obras = getLivros();
         int count = 0;
 

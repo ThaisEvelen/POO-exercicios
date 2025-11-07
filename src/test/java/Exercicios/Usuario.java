@@ -5,8 +5,11 @@ public class Usuario extends Pessoa {
     private Emprestimo[] historicoEmprestimos;
 
     public Usuario(String nome, int idade, Emprestimo[] historicoEmprestimos, Livro[] livros) {
-        super(nome, livros);
+    super(nome, livros);
         this.idade = idade;
+        this.historicoEmprestimos = historicoEmprestimos;
+    }
+    public void setHistoricoEmprestimos(Emprestimo[] historicoEmprestimos) {
         this.historicoEmprestimos = historicoEmprestimos;
     }
 
