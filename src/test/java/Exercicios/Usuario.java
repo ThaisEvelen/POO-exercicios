@@ -9,6 +9,9 @@ public class Usuario extends Pessoa {
         this.idade = idade;
         this.historicoEmprestimos = historicoEmprestimos;
     }
+    public void setHistoricoEmprestimos(Emprestimo[] historicoEmprestimos) {
+        this.historicoEmprestimos = historicoEmprestimos;
+    }
 
     public int getIdade() {
         return idade;
