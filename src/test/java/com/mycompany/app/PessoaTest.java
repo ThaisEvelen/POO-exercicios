@@ -1,9 +1,15 @@
 package com.mycompany.app;
-import Exercicios.*;
+
+
+import Exercicios.Model.*;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 public class PessoaTest {
     @Test
     public void testGetNome() {
