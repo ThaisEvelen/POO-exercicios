@@ -1,4 +1,5 @@
-package Exercicios;
+package Exercicios.Model;
+
 
 import java.util.Date;
 

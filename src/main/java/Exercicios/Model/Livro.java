@@ -1,4 +1,5 @@
-package Exercicios;
+package Exercicios.Model;
+
 
 public class Livro {
     private String titulo;

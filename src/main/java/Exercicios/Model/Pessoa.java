@@ -1,4 +1,5 @@
-package Exercicios;
+package Exercicios.Model;
+
 
 public class Pessoa {
     private String nome;

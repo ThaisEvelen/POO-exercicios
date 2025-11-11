@@ -1,8 +1,11 @@
+package Exercicios;
 
-import Exercicios.Autor;
-import Exercicios.Emprestimo;
-import Exercicios.Livro;
-import Exercicios.Usuario;
+
+
+import Exercicios.Model.Autor;
+import Exercicios.Model.Emprestimo;
+import Exercicios.Model.Livro;
+import Exercicios.Model.Usuario;
 
 import java.util.Date;
 

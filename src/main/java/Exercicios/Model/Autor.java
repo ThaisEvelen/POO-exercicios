@@ -1,5 +1,6 @@
-package Exercicios;
-public class Autor extends Exercicios.Pessoa {
+package Exercicios.Model;
+
+public class Autor extends Pessoa {
     private String nacionalidade;
 
     public Autor(String nome, String nacionalidade, Livro[] livros) {
