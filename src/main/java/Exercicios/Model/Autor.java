@@ -1,6 +1,6 @@
 package Exercicios.Model;
 
-public class Autor extends Pessoa {
+public abstract class Autor extends Pessoa {
     private String nacionalidade;
 
     public Autor(String nome, String nacionalidade, Livro[] livros) {
@@ -45,4 +45,6 @@ public class Autor extends Pessoa {
     public void setNome(String nome) {
         super.setNome(nome);
     }
+
+    public abstract void publicar();
 }

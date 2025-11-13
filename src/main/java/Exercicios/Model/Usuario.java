@@ -1,8 +1,16 @@
 package Exercicios.Model;
 
 
+import Exercicios.Interfaces.AutorInterface;
 
-public class Usuario extends Pessoa {
+import java.sql.SQLOutput;
+
+public class Usuario extends Pessoa implements AutorInterface {
+    @Override
+    public void publicar() {
+        System.out.println("Usuario publicado");
+    }
+
     private int idade;
     private Emprestimo[] historicoEmprestimos;
 
@@ -22,4 +30,5 @@ public class Usuario extends Pessoa {
     public Emprestimo[] getHistoricoEmprestimos() {
         return historicoEmprestimos;
     }
+
 }

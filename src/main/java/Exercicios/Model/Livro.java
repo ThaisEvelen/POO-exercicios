@@ -1,24 +1,15 @@
 package Exercicios.Model;
 
 
-public class Livro {
-    private String titulo;
-    private Autor autor;
+public class Livro extends Publicacao{
+
+
     private String genero;
     private boolean disponivel = true;
 
     public Livro(String titulo, Autor autor, String genero) {
-        this.titulo = titulo;
-        this.autor = autor;
+        super(titulo,autor);
         this.genero = genero;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public Autor getAutor() {
-        return autor;
     }
 
     public String getGenero() {
@@ -39,6 +30,11 @@ public class Livro {
 
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    @Override
+    public void validadarPublicacao(){
+        System.out.println("Validando publicacao de Livro");
     }
 }
 
