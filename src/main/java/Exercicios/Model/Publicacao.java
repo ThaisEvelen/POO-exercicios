@@ -14,10 +14,8 @@ public abstract class Publicacao {
    public Autor getAutor() {
         return autor;
    }
-    public void validarPublicacao(){
-    }
 
-    public abstract void validadarPublicacao();
+    public abstract void validarPublicacao();
 }
 
 

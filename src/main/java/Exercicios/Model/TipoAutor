@@ -1,6 +1,0 @@
-packege Exercicios.Model;
-
-public enum TipoAutor{
-usuario,
-Tradicional
-}

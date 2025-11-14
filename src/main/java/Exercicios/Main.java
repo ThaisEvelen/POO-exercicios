@@ -1,22 +1,25 @@
 package Exercicios;
 
-
-
-import Exercicios.Model.Autor;
-import Exercicios.Model.Emprestimo;
-import Exercicios.Model.Livro;
-import Exercicios.Model.Usuario;
+import Exercicios.Model.*;
+import Exercicios.Model.TipoAutor;
 
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
 
-        Autor autor = new Autor("Jessica Felix", "Brasileira", new Livro[0]) {
+        Autor autor = new Autor("Jessica Felix", "Brasileira", TipoAutor.Usuario, new Livro[0]) {
             @Override
             public void publicar() {
+                System.out.println("Publicando artigo...");
             }
         };
+
+        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "tecnologia", true);
+        System.out.println("Artigo: " + artigo.getTitulo());
+        System.out.println("Gênero do Artigo: " + artigo.getGenero());
+        System.out.println("Publicado: " + artigo.isPublicado());
+
         String nome = autor.getNome();
 
         Livro livro = new Livro("Java for Beginners", autor, "Tecnologia");

@@ -33,7 +33,7 @@ public class Livro extends Publicacao{
     }
 
     @Override
-    public void validadarPublicacao(){
+    public void validarPublicacao(){
         System.out.println("Validando publicacao de Livro");
     }
 }

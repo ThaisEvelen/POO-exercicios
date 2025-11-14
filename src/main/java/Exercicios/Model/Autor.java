@@ -1,11 +1,10 @@
 package Exercicios.Model;
-import Exercicios.Model.TipoAutor;
 
 public abstract class Autor extends Pessoa {
     private String nacionalidade;
     private TipoAutor tipo;
 
-    public Autor(String nome, String nacionalidade, Livro[] livros, TipoAutor tipo) {
+    public Autor(String nome, String nacionalidade, TipoAutor tipo, Livro[] livros) {
         super(nome, livros);
         this.nacionalidade = nacionalidade;
         this.tipo = tipo;
@@ -13,6 +12,14 @@ public abstract class Autor extends Pessoa {
 
     public String getNacionalidade() {
         return nacionalidade;
+    }
+
+    public TipoAutor getTipo() {
+        return tipo;
+    }
+
+    public boolean isUsuario() {
+        return this.tipo == TipoAutor.Usuario;
     }
 
     public Livro[] getObrasPublicadas() {
@@ -40,16 +47,12 @@ public abstract class Autor extends Pessoa {
 
         return filtrados;
     }
-    public TipoAutor getTipo(){
-        return tipo;
-    }
-    public boolean isUsuario(){
-        return this.tipo == TipoAutor.Usuario;
-    }
+
     @Override
     public String getNome() {
         return super.getNome();
     }
+
     @Override
     public void setNome(String nome) {
         super.setNome(nome);

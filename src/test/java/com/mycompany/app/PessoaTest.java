@@ -1,5 +1,7 @@
 package com.mycompany.app;
-import Exercicios.*;
+import Exercicios.Model.*;
+import Exercicios.Model.Artigo;
+import Exercicios.Model.TipoAutor;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.text.SimpleDateFormat;
@@ -8,7 +10,12 @@ public class PessoaTest {
     @Test
     public void testGetNome() {
 
-        Autor autor = new Autor("JGeorge Orwell", "Americano", new Livro[0]);
+        Autor autor = new Autor("George Orwell", "Americano", TipoAutor.Tradicional, new Livro[0]) {
+            @Override
+            public void publicar() {
+
+            }
+        };
 
         Livro[] meusLivros = { new Livro("1984", autor,"Distopia")};
 
@@ -21,7 +28,12 @@ public class PessoaTest {
     }
     @Test
     public void testLivro() {
-        Autor autor = new Autor("George Orwell", "Inglês", new Livro[1]);
+        Autor autor = new Autor("George Orwell", "Inglês", TipoAutor.Tradicional, new Livro[1]) {
+            @Override
+            public void publicar() {
+
+            }
+        };
         Livro livro = new Livro("1984", autor, "Ficção");
         assertEquals("1984", livro.getTitulo());
         assertEquals(autor, livro.getAutor());
@@ -33,7 +45,12 @@ public class PessoaTest {
         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 
 
-        Autor autor = new Autor("J.K. Rowling", "Britânica", new Livro[2]);
+        Autor autor = new Autor("J.K. Rowling", "Britânica", TipoAutor.Tradicional, new Livro[2]) {
+            @Override
+            public void publicar() {
+
+            }
+        };
         Livro livro = new Livro("Harry Potter", autor, "Fantasia");
         Livro[] livros = { livro };
 
@@ -60,6 +77,40 @@ public class PessoaTest {
         assertEquals(usuario, emprestimo.getUsuario());
         assertEquals(retirada, emprestimo.getDataRetirada());
         assertEquals(devolucao, emprestimo.getDataDevolucao());
+    }
+    @Test
+    public void deveCriarArtigoCorretamente() {
+
+        Autor autor = new Autor("Jessica", "Brasileira", TipoAutor.Usuario, new Livro[0]) {
+            @Override
+            public void publicar() {}
+        };
+
+        Artigo artigo = new Artigo(
+                "Entendendo Compiladores",
+                autor,
+                "tecnologia",
+                true
+        );
+
+        assertEquals("Entendendo Compiladores", artigo.getTitulo());
+        assertEquals(autor, artigo.getAutor());
+        assertEquals("tecnologia", artigo.getGenero());
+        assertTrue(artigo.isPublicado());
+    }
+
+
+    @Test
+    public void deveValidarPublicacaoSemErro() {
+
+        Autor autor = new Autor("Mario", "Brasileiro", TipoAutor.Tradicional, new Livro[0]) {
+            @Override
+            public void publicar() {}
+        };
+
+        Artigo artigo = new Artigo("Testando", autor, "educacao", false);
+
+        artigo.validarPublicacao();
     }
 }
 

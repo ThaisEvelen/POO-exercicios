@@ -18,7 +18,7 @@ public class Artigo extends Publicacao {
     }
 
     @Override
-    public void validadarPublicacao() {
+    public void validarPublicacao() {
         System.out.println("Validando Publicacao de Artigo");
     }
 }

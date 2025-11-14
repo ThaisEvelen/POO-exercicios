@@ -1,5 +1,5 @@
 package Exercicios;
-public class Autor extends Exercicios.Pessoa {
+public abstract class Autor extends Exercicios.Pessoa {
     private String nacionalidade;
 
     public Autor(String nome, String nacionalidade, Livro[] livros) {
@@ -36,4 +36,6 @@ public class Autor extends Exercicios.Pessoa {
 
         return filtrados;
     }
+
+    public abstract void publicar();
 }

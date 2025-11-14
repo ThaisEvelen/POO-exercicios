@@ -9,7 +9,12 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
 
-        Autor autor = new Autor("Jessica Felix", "Brasileira", new Livro[0]);
+        Autor autor = new Autor("Jessica Felix", "Brasileira", new Livro[0]) {
+            @Override
+            public void publicar() {
+
+            }
+        };
 
         Livro livro = new Livro("Java for Beginners", autor, "Tecnologia");
         livro.setDisponivel(false);
