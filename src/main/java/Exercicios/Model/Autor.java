@@ -1,11 +1,14 @@
 package Exercicios.Model;
+import Exercicios.Model.TipoAutor;
 
 public abstract class Autor extends Pessoa {
     private String nacionalidade;
+    private TipoAutor tipo;
 
-    public Autor(String nome, String nacionalidade, Livro[] livros) {
+    public Autor(String nome, String nacionalidade, Livro[] livros, TipoAutor tipo) {
         super(nome, livros);
         this.nacionalidade = nacionalidade;
+        this.tipo = tipo;
     }
 
     public String getNacionalidade() {
@@ -36,6 +39,12 @@ public abstract class Autor extends Pessoa {
         }
 
         return filtrados;
+    }
+    public TipoAutor getTipo(){
+        return tipo;
+    }
+    public boolean isUsuario(){
+        return this.tipo == TipoAutor.Usuario;
     }
     @Override
     public String getNome() {

@@ -16,8 +16,9 @@ public class Artigo extends Publicacao {
     public boolean isPublicado() {
         return publicado;
     }
+
     @Override
-    public void validarPublicacao(){
+    public void validadarPublicacao() {
         System.out.println("Validando Publicacao de Artigo");
     }
 }

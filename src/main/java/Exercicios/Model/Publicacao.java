@@ -16,6 +16,8 @@ public abstract class Publicacao {
    }
     public void validarPublicacao(){
     }
+
+    public abstract void validadarPublicacao();
 }
 
 
