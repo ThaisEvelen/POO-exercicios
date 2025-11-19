@@ -1,13 +1,12 @@
 package Exercicios.Model;
 
-
 public class Pessoa {
     private String nome;
     private Livro[] livros;
 
-    public Pessoa(String nome, Livro[] livros) {
+    public Pessoa(String nome) {
         this.nome = nome;
-        this.livros = livros;
+        this.livros = new Livro[0]; // começa vazio
     }
 
     public String getNome() {

@@ -1,23 +1,32 @@
-
-import Exercicios.Autor;
-import Exercicios.Emprestimo;
-import Exercicios.Livro;
-import Exercicios.Usuario;
+import Exercicios.Model.Autor;
+import Exercicios.Model.TipoAutor;
+import Exercicios.Model.Emprestimo;
+import Exercicios.Model.Livro;
+import Exercicios.Model.Artigo;
+import Exercicios.Model.EstrategiaPublicacaoArtigo;
+import Exercicios.Model.EstrategiaPublicacaoLivro;
+import Exercicios.Model.Usuario;
 
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
 
-        Autor autor = new Autor("Jessica Felix", "Brasileira", new Livro[0]) {
-            @Override
-            public void publicar() {
+        Autor autor = new Autor("Jessica Felix", "Brasileira", TipoAutor.Usuario);
 
-            }
-        };
 
         Livro livro = new Livro("Java for Beginners", autor, "Tecnologia");
         livro.setDisponivel(false);
+
+        Artigo artigo = new Artigo("Otimizando Compiladores", autor, "Computação", true);
+
+        EstrategiaPublicacaoLivro estrategiaLivro = new EstrategiaPublicacaoLivro();
+        EstrategiaPublicacaoArtigo estrategiaArtigo = new EstrategiaPublicacaoArtigo();
+
+        System.out.println("== Publicação de Livro ==");
+        autor.setEstrategiaPublicacao(estrategiaLivro);
+        autor.publicar();
+
 
         Usuario usuario = new Usuario("Lucas Rafael", 25, new Emprestimo[0], new Livro[]{livro});
 

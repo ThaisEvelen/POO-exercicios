@@ -1,14 +1,20 @@
 package Exercicios.Model;
 
-public abstract class Autor extends Pessoa {
+import Exercicios.Interfaces.Publicavel;
+
+public class Autor extends Pessoa implements Publicavel {
     private String nacionalidade;
     private TipoAutor tipo;
 
-    public Autor(String nome, String nacionalidade, TipoAutor tipo, Livro[] livros) {
-        super(nome, livros);
+    // estratégia de publicação
+    private Publicavel estrategiaPublicacao;
+
+    public Autor(String nome, String nacionalidade, TipoAutor tipo) {
+        super(nome);
         this.nacionalidade = nacionalidade;
         this.tipo = tipo;
     }
+
 
     public String getNacionalidade() {
         return nacionalidade;
@@ -48,15 +54,18 @@ public abstract class Autor extends Pessoa {
         return filtrados;
     }
 
-    @Override
-    public String getNome() {
-        return super.getNome();
+    public void setEstrategiaPublicacao(Publicavel estrategia) {
+        this.estrategiaPublicacao = estrategia;
     }
 
     @Override
-    public void setNome(String nome) {
-        super.setNome(nome);
-    }
+    public void publicar() {
+        if (estrategiaPublicacao == null) {
+            throw new IllegalStateException(
+                    "Nenhuma estratégia de publicação foi definida para este autor."
+            );
+        }
 
-    public abstract void publicar();
+        estrategiaPublicacao.publicar();
+    }
 }

@@ -8,7 +8,7 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
 
-        Autor autor = new Autor("Jessica Felix", "Brasileira", TipoAutor.Usuario, new Livro[0]) {
+        Autor autor = new Autor("Jessica Felix", "Brasileira", TipoAutor.Usuario) {
             @Override
             public void publicar() {
                 System.out.println("Publicando artigo...");
